@@ -1,8 +1,8 @@
 # Apache + PHP 5.3
 This docker image contains apache and old PHP 5.3 for supporting older projects which need to run in Azure Web App environment.
 
-## Docker Images for App Service Linux 
-This repository contains docker images that are used for App Service Linux. 
+## Docker Image for App Service Linux 
+This repository contains docker image that can be used for Azure App Service (Linux). 
 
 ## Components
 This docker image currently contains the following components:
@@ -18,5 +18,5 @@ This docker image currently contains the following components:
 Click save and then restart your web app. Will take few minutes to build it.
 
 ## Original Attribution
-This docker image was built based on Azure-App-Service/php/5.6.40-apache image (https://github.com/Azure-App-Service/php/tree/master/5.6.40-apache). 
+This docker image was built based on https://github.com/Azure-App-Service/php/tree/master/5.6.40-apache 
 The image was built to support some of our clients who are not ready to migrate the code to latest PHP version and require PHP 5.3 environment.
