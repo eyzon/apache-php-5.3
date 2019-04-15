@@ -32,9 +32,11 @@ RUN rm -rf /var/www/html && mkdir -p /var/lock/apache2 /var/run/apache2 /var/log
 
 # mount Azure storage
 RUN rm -rf /var/log/apache2 \
-   && mkdir -p /home/LogFiles \
-   && ln -s /home/site/wwwroot /var/www/html \
-   && ln -s /home/LogFiles /var/log/apache2 
+      && mkdir -p /home/LogFiles \
+      && ln -s /home/site/wwwroot /var/www/html \
+      && ln -s /home/LogFiles /var/log/apache2 
+   
+
 
 # Apache + PHP requires preforking Apache for best results
 RUN a2dismod mpm_event && a2enmod mpm_prefork
