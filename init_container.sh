@@ -13,7 +13,7 @@ PHP quickstart: https://aka.ms/php-qs
 PHP version : `php -v | head -n 1 | cut -d ' ' -f 2`
 EOL
 cat /etc/motd
-
+echo "we are in script"
 # Get environment variables to show up in SSH session
 eval $(printenv | sed -n "s/^\([^=]\+\)=\(.*\)$/export \1=\2/p" | sed 's/"/\\\"/g' | sed '/=/s//="/' | sed 's/$/"/' >> /etc/profile)
 

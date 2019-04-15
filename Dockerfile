@@ -119,9 +119,14 @@ RUN buildDeps=" \
 RUN echo "default_charset = " > $PHP_INI_DIR/php.ini \
     && echo "date.timezone = America/Toronto" >> $PHP_INI_DIR/php.ini
 
+# install SSH server
+RUN apt-get update \
+      && apt-get install openssh-server -y
+
 COPY docker-php-* /usr/local/bin/
 COPY apache2-foreground /usr/local/bin/
 
+# expose ports for web and ssh
 ENV PORT 8080
 ENV SSH_PORT 2222
 EXPOSE 2222 8080
