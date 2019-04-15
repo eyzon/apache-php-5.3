@@ -137,7 +137,7 @@ ENV WEBSITE_INSTANCE_ID localInstance
 ENV PATH ${PATH}:/home/site/wwwroot
 
 WORKDIR /var/www/html
-
+RUN chmod 777 /bin/init_container.sh
 ENTRYPOINT ["/bin/init_container.sh"]
 
 #CMD ["apache2-foreground"]
