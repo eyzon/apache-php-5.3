@@ -60,7 +60,6 @@ RUN CFLAGS="-fPIC" && OPENSSL_VERSION="1.0.2d" \
       && mkdir openssl \
       && curl -sL "https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz" -o openssl.tar.gz \
       && curl -sL "https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz.asc" -o openssl.tar.gz.asc \
-      && gpg --verify openssl.tar.gz.asc \
       && tar -xzf openssl.tar.gz -C openssl --strip-components=1 \
       && cd /tmp/openssl \
       && ./config -fPIC && make && make install \
@@ -89,7 +88,6 @@ RUN buildDeps=" \
       && apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
       && curl -SL "http://php.net/get/php-$PHP_VERSION.tar.xz/from/this/mirror" -o php.tar.xz \
       && curl -SL "http://php.net/get/php-$PHP_VERSION.tar.xz.asc/from/this/mirror" -o php.tar.xz.asc \
-      && gpg --verify php.tar.xz.asc \
       && mkdir -p /usr/src/php \
       && tar -xof php.tar.xz -C /usr/src/php --strip-components=1 \
       && rm php.tar.xz* \
