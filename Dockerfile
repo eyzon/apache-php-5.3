@@ -127,9 +127,9 @@ COPY docker-php-* /usr/local/bin/
 COPY apache2-foreground /usr/local/bin/
 
 # expose ports for web and ssh
-ENV PORT 8080
-ENV SSH_PORT 2222
-EXPOSE 2222 8080
+ENV PORT 80
+ENV SSH_PORT 22
+EXPOSE 22 80
 COPY sshd_config /etc/ssh/
 
 # setup default site
